@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: 
+  gender: 
+  bio: MyText
+
+two:
+  name: 
+  gender: 
+  bio: MyText

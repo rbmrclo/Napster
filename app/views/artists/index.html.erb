@@ -1,0 +1,25 @@
+<h1>Artist page</h1>
+
+ <table border = 1>
+   <th>Name</th>
+   <th>Gender</th>
+   <th>Bio</th>
+   <th>Album/s</th>
+
+
+<% @artists.each do |artist| %>
+ 
+  <tr>
+    <td><%= artist.name %></td>
+    <td><%= artist.gender %></td>
+    <td><%= artist.bio %></td>
+    <td><%= %></td>
+    <td><%= link_to 'Show', artist %> </td>
+    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+    <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %>
+  </tr>
+
+<% end %>
+</table>
+<br/>
+<%= link_to "Add artist", new_artist_path %>

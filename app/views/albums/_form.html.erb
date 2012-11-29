@@ -1,0 +1,11 @@
+<%= form_for ([@artist, @album]) do |f| %>
+  <%= f.label :album_name, "Album Name" %>
+  <%= f.text_field :album_name %><br/>
+  <%= f.label :date_published, "Date Published" %>
+  <%= f.text_field :date_published %><br/>
+  <%= f.label :genre, "Genre" %><br />
+  <%= f.text_area :genre %><br/>
+  <%= f.label :remarks, "Remarks" %>
+  <%= f.text_area :remarks %>
+  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+<% end %>
