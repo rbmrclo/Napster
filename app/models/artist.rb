@@ -3,7 +3,6 @@ class Artist < ActiveRecord::Base
 
   validates_presence_of :name
   validates_presence_of :bio
-  validates_presence_of :gender
   
   has_many :albums
 end
