@@ -9,3 +9,10 @@
   <%= f.text_field :remarks %><br />
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>
 <% end %>
+<% if @album.errors.any? %>
+	<% @album.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+<% end %>
+
+<%= link_to 'Back', artist_path(@artist) %>

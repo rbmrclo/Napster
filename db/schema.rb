@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20121203013503) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
-    t.string   "gender"
     t.text     "bio"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -6,6 +6,6 @@ class Album < ActiveRecord::Base
   validates_presence_of :genre
   validates_presence_of :remarks
 
-  belongs_to :artist, :dependent => :destroy
-  has_many :tracks
+  belongs_to :artist
+  has_many :tracks, :dependent => :destroy
 end

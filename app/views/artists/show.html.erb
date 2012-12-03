@@ -2,10 +2,10 @@
 
 <li><b>Name: </b><%= @artist.name.titlecase %> </li>
 <li><b>Bio: </b><%= @artist.bio %> </li>
-<li><b>Albums:</b></li>
+<li><b><u><%= link_to 'Albums', artist_album_path(@artist) %></u></b></li>
 <% @artist.albums.each do |album| %>
-- <%= album.album_name %> 
-<%= link_to 'View Album', artist_album_path(@artist) %><br/>
+- <%= album.album_name %>
+<br/>
 <% end %>
 <br/>
 <%= link_to 'Add album', new_artist_album_path(@artist) %>

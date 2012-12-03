@@ -1,8 +1,8 @@
-<h1> Track List </h1>
+<h1> <%= @album.album_name %></h1>
 
 <% @artist.albums.each do |album| %>
   <% album.tracks.each do |track| %>
-  <%=  track.track_list %> <br/>
+  - <%=  track.track_list %> <br/>
   <% end %>
 <% end %>
 <br/>

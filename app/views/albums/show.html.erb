@@ -1,7 +1,7 @@
 <h1> Albums </h1>
 <% @artist.albums.each do |album| %>
-<%= link_to album.album_name , artist_album_track_path(@artist,@album) %>
-<%= link_to 'Add tracks', new_artist_album_track_path(@artist, album) %><br/>
+<%= link_to album.album_name , artist_album_track_path(@artist,@album) %> &nbsp&nbsp | &nbsp&nbsp <kbd>
+<%= link_to 'Add tracks', new_artist_album_track_path(@artist, album) %></kbd><br/>
 <% end %>
 <br/>
 <%= link_to 'Back', artist_path %>

@@ -11,7 +11,10 @@
   <tr>
     <td><%= artist.name %></td>
     <td><%= artist.bio %></td>
-    <td><%= %></td>
+    <td><% @albums.each do |album| %>
+    <%= link_to album.album_name, artist_album_path(artist, album) %><br/>
+    <% end %>
+    </td>
     <td><%= link_to 'Show', artist %> </td>
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
     <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %>
@@ -22,4 +25,4 @@
 <br/>
 <%= link_to "Add artist", new_artist_path %>
 <hr>
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path %> 
