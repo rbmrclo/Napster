@@ -1,0 +1,9 @@
+<h1> Track List </h1>
+
+<% @artist.albums.each do |album| %>
+  <% album.tracks.each do |track| %>
+  <%=  track.track_list %> <br/>
+  <% end %>
+<% end %>
+<br/>
+<%= link_to 'Back', artist_album_path(@artist, @album) %>

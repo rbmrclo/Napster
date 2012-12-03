@@ -2,7 +2,9 @@ Napster::Application.routes.draw do
   
   get "home/index"
   resources :artists do
-    resources :albums
+    resources :albums do
+      resources :tracks 
+    end
   end
 
   match '/artists' => "artists#show", :via => :get, :as => "artists"

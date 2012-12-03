@@ -1,0 +1,12 @@
+<%= form_for ([@artist, @album, @track]) do |f| %>
+  <%= f.label :track_list, "Song" %>
+  <%= f.text_field :track_list %><br/>
+
+  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+<% end %>
+
+<% if @track.errors.any? %>
+	<% @track.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+<% end %>

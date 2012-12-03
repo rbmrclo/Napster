@@ -3,10 +3,12 @@
 <li><b>Name: </b><%= @artist.name.titlecase %> </li>
 <li><b>Gender: </b><%= @artist.gender.titlecase %> </li>
 <li><b>Bio: </b><%= @artist.bio %> </li>
-Albums:
+<li><b>Albums:</b></li>
 <% @artist.albums.each do |album| %>
-
-<li><%= album.album_name %></li>
+- <%= album.album_name %> 
+<%= link_to 'View Album', artist_album_path(@artist) %><br/>
 <% end %>
 <br/>
 <%= link_to 'Add album', new_artist_album_path(@artist) %>
+<hr>
+<%= link_to 'Back to Artists', artists_path %>
