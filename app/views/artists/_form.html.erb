@@ -1,4 +1,6 @@
-
+<ul class="nav nav-list">
+<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
+</ul>
 <%= form_for @artist do |f| %>
   <%= f.label :name, "Name" %>
   <%= f.text_field :name %><br/>

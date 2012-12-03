@@ -1,3 +1,6 @@
+<ul class="nav nav-list">
+<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
+</ul>
 <%= form_for ([@artist, @album]) do |f| %>
   <%= f.label :album_name, "Album Name" %>
   <%= f.text_field :album_name %><br/>

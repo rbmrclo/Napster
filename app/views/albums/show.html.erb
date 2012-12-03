@@ -1,6 +1,10 @@
+<ul class="nav nav-list">
+<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
+</ul>
 <h1> Albums </h1>
 <% @artist.albums.each do |album| %>
-<%= link_to album.album_name , artist_album_track_path(@artist,@album) %> &nbsp&nbsp | &nbsp&nbsp <kbd>
+<%= link_to album.album_name , artist_album_track_path(@artist,@album) %>
+ ( Genre: <span class="muted"><%= album.genre %> </span>)<kbd><br/>
 <%= link_to 'Add tracks', new_artist_album_track_path(@artist, album) %></kbd><br/>
 <% end %>
 <br/>
