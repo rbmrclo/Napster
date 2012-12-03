@@ -1,18 +1,18 @@
-<ul class="nav nav-list">
-<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
-</ul>
+<div class="dialog">
+<center><h2> Create Artist </h2></center>
 <%= form_for @artist do |f| %>
   <%= f.label :name, "Name" %>
   <%= f.text_field :name %><br/>
   <%= f.label :bio, "Bio" %><br />
-  <%= f.text_area :bio %><br/>
+  <%= f.text_area :bio, rows: 3 %><br/>
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>
 <% end %>
-
-<% if @artist.errors.any? %>
+</div>
+<div class="dialog-error">
+<span class="text-error"><% if @artist.errors.any? %>
 	<% @artist.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
-<% end %>
-
+<% end %></span>
+</div>
 <%= link_to "Back", artists_path %>

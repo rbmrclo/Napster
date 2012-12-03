@@ -1,6 +1,5 @@
-<ul class="nav nav-list">
-<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
-</ul>
+<div class = "dialog">
+ <center> <h2> Add album </h2></center>
 <%= form_for ([@artist, @album]) do |f| %>
   <%= f.label :album_name, "Album Name" %>
   <%= f.text_field :album_name %><br/>
@@ -11,11 +10,15 @@
   <%= f.label :remarks, "Remarks" %>
   <%= f.text_field :remarks %><br />
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+
 <% end %>
+</div>
+<div class ="dialog-error">
 <% if @album.errors.any? %>
 	<% @album.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
+	<li class="text-error"><%= msg %></li>
 	<% end %>
 <% end %>
+</div>
 
 <%= link_to 'Back', artist_path(@artist) %>

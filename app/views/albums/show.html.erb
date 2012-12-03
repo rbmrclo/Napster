@@ -1,11 +1,19 @@
-<ul class="nav nav-list">
-<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
-</ul>
 <h1> Albums </h1>
+<table class="table table-striped">
+		<th> Album Name </th>
+		<th> Genre </th>
+		<th> Date Published </th>
+		<th> Remarks </th>
+		<th></th>
 <% @artist.albums.each do |album| %>
-<%= link_to album.album_name , artist_album_track_path(@artist,@album) %>
- ( Genre: <span class="muted"><%= album.genre %> </span>)<kbd><br/>
-<%= link_to 'Add tracks', new_artist_album_track_path(@artist, album) %></kbd><br/>
+	<tr>
+	<td><%= link_to album.album_name , artist_album_track_path(@artist,@album) %></td>
+ 	<td><span class="muted"><%= album.genre %> </span></td>
+	<td><span class="muted"><%= album.date_published %></td>
+	<td><span class="muted"><%= album.remarks %></td>
+	<td><kbd><%= link_to 'Add tracks', new_artist_album_track_path(@artist, album) %></kbd></td>
 <% end %>
+	</tr>
+</table>
 <br/>
 <%= link_to 'Back', artist_path %>

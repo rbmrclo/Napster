@@ -1,14 +1,17 @@
+<div class="dialog">
+	<center><h1> <%= @album.album_name %></h1></center>
 <%= form_for ([@artist, @album, @track]) do |f| %>
   <%= f.label :track_list, "Song" %>
   <%= f.text_field :track_list %><br/>
 
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>
 <% end %>
-
+</div>
+<div class="dialog-error">
 <% if @track.errors.any? %>
 	<% @track.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
+	<li class = "text-error"><%= msg %></li>
 	<% end %>
 <% end %>
-
+</div>
 <%= link_to 'Back', artist_album_path(@artist, @album) %>

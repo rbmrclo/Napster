@@ -1,11 +1,10 @@
-<ul class="nav nav-list">
-<li class="active"><i class="icon-home icon-white"></i><%= link_to "Home", root_path %></li>
+<ol type="1" class="dialog">
 <h1> <%= @album.album_name %></h1>
-
 <% @artist.albums.each do |album| %>
   <% album.tracks.each do |track| %>
-  - <%=  track.track_list %> <br/>
+  <li><%=  track.track_list %></li>
   <% end %>
 <% end %>
+</ol>
 <br/>
 <%= link_to 'Back', artist_album_path(@artist, @album) %>

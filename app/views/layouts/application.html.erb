@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+
+    .dialog {
+      width: 25em;
+      padding: 2em 5em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right:3px solid #ccc;
+      border-bottom: 3px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+    .dialog-error {
+      width: 25em;
+      padding: 0 5em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right:3px solid #ccc;
+      border-bottom: 3px solid #ccc;
+      border-color: maroon;
+    }
+  </style>
   <title>Napster</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container">
+	<ul class="nav nav-pills">
+  <li class="active">
+   <%= link_to "Home", root_path %>
+  </li>
+  <li class = "active"><%= link_to "Artists", artists_path %></li>
+</ul>
 <%= yield %>
+</div>
 
 </body>
 </html>
