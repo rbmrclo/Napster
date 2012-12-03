@@ -11,7 +11,7 @@
   <tr>
     <td><%= artist.name %></td>
     <td><%= artist.bio %></td>
-    <td><% @albums.each do |album| %>
+    <td><% artist.albums.each do |album| %>
     <%= link_to album.album_name, artist_album_path(artist, album) %><br/>
     <% end %>
     </td>
