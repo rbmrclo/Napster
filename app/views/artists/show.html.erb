@@ -1,14 +1,14 @@
 <div class="dialog">
 <h1><%= @artist.name.titlecase %></h1>
 <li><b><span class="text-info">Bio:</span> </b><%= @artist.bio %> </li>
-<li><b><u><%= link_to 'Albums', artist_albums_path(@artist) %></u></b></li>
+<li><b><span class="text-info">Albums</b></li>
 <ol type="1">
 <% @artist.albums.each do |album| %>
 <li class="muted"><%= album.album_name %></li>
 <% end %>
 </ol>
 <hr>
-<%= link_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist) %>
+<span class="btn btn-muted"><%= link_to 'View Albums', artist_albums_path(@artist) %> </span>
 </div>
 <br/>
 <hr>

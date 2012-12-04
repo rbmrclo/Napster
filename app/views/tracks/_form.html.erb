@@ -1,7 +1,7 @@
 <div class="dialog">
 	<center><h1> <%= @album.album_name %></h1></center>
 <%= form_for ([@artist, @album, @track]) do |f| %>
-  <%= f.label :track_list, "Song" %>
+  <%= f.label :track_list, "Enter Track Name:" %>
   <%= f.text_field :track_list %><br/>
 
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>

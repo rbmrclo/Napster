@@ -15,10 +15,12 @@
 		<td><span class="muted"><%= album.date_published %></td>
 		<td><span class="muted"><%= album.remarks %></td>
 		<td><%= link_to 'Edit', edit_artist_album_path(@artist,album) %></td>
-		<td><%= link_to 'Destroy', @artist_album_path, :method => :delete, :data => {:confirm => "Are you sure?" } %></td>
+		<td><%= link_to 'Destroy', artist_album_path(@artist,album), :method => :delete, :data => {:confirm => "Are you sure?" } %></td>
 		</tr>
 	<% end %>
 
 </table>
 <br/>
-<%= link_to "Back to #{@artist.name}", artist_path(@artist)%>
+<span class="btn btn-muted"><%= link_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist) %></span>
+<hr>
+<%= link_to "Back to #{@artist.name.titlecase}", artist_path(@artist)%>

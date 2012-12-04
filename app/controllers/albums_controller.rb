@@ -6,7 +6,7 @@ class AlbumsController < ApplicationController
 	end
 
 	def show
-		#raise params.to_yaml
+
 		@album = @artist.albums.find params[:id]
 	end
 	
@@ -39,7 +39,7 @@ class AlbumsController < ApplicationController
   	end
 
   	def destroy
-  		@album = Album.find(params[:id])
+  		@album = @artist.albums.find(params[:id])
     	@album.destroy
 
     	redirect_to artist_albums_path

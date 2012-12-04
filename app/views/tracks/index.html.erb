@@ -1,10 +1,10 @@
 <ol type="1" class="dialog">
 <h1> <%= @album.album_name %> </h1>
 <% @album.tracks.each do |track| %>
-<li><%= track.track_list %> | <%= link_to 'Delete', track, :method => :delete, :data => {:confirm => "Are you sure?" } %></li>
+<li><%= track.track_list %> | <%= link_to 'Delete', artist_album_track_path(@artist,@album,track), :method => :delete, :data => {:confirm => "Are you sure?" } %></li>
 <% end %>
 <hr>
-<td><kbd><%= link_to 'Add tracks', new_artist_album_track_path(@artist, @album) %></kbd></td>
+<td><span class="btn btn-muted"><%= link_to 'Add tracks', new_artist_album_track_path(@artist, @album) %></span></td>
 </ol>
 <br/>
 
