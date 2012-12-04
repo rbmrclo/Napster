@@ -31,11 +31,12 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album = Album.find(params[:id])
-    if @album.update_attributes(params[:album])
-      redirect_to artist_albums_path
-    else
-      render 'edit'
-   	 end
+    
+    	if @album.update_attributes(params[:album])
+      		redirect_to artist_albums_path
+    	else
+      		render 'edit'
+   	 	end
   	end
 
   	def destroy
@@ -44,6 +45,11 @@ class AlbumsController < ApplicationController
 
     	redirect_to artist_albums_path
   	end
+
+
+
+
+
 
 
 
