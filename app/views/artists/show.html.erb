@@ -3,8 +3,15 @@
 <li><b><span class="text-info">Bio:</span> </b><%= @artist.bio %> </li>
 <li><b><span class="text-info">Albums</b></li>
 <ol type="1">
+<% if @artist.albums.count > 0 %>
 <% @artist.albums.each do |album| %>
 <li class="muted"><%= album.album_name %></li>
+<% end %>
+<% else %>
+<span class="muted"><%= 'You don\'t have existing Albums.' %>
+	<br/>
+	<%= 'Create an Album first!' %>
+</span>
 <% end %>
 </ol>
 <hr>

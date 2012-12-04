@@ -50,4 +50,5 @@ class AlbumsController < ApplicationController
 	def find_artist
 		@artist = Artist.find(params[:artist_id])
 	end
+
 end

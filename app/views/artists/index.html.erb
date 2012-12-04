@@ -12,11 +12,16 @@
   <tr>
     <td><%= link_to artist.name, artist %></td>
     <td class="muted"><%= artist.bio %></td>
-    <td class="muted"><% artist.albums.each do |album| %>
+    <td class="muted">
+    <% if artist.albums.count > 0 %>
+    <% artist.albums.each do |album| %>
       <%= album.album_name %>
-    <br/>
+      <% end %>
+    <% else %>
+    <span class="text-error"><%= 'No Existing Album' %></span>
     <% end %>
     </td>
+
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
     <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %></td>
   </tr>

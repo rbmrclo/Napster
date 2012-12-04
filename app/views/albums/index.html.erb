@@ -8,6 +8,7 @@
 		<th></th>
 		<th></th>
 	</tr>
+	<% if @artist.albums.count > 0 %>
 	<% @artist.albums.each do |album| %>
 		<tr>
 		<td><%= link_to album.album_name , artist_album_tracks_path(@artist, album) %></td>
@@ -18,7 +19,11 @@
 		<td><%= link_to 'Destroy', artist_album_path(@artist,album), :method => :delete, :data => {:confirm => "Are you sure?" } %></td>
 		</tr>
 	<% end %>
-
+	<% else %>
+	<td class="muted">
+		<%= "Create an Album for #{@artist.name.titlecase}" %> 
+		<% end %>
+	</td>
 </table>
 <br/>
 <span class="btn btn-muted"><%= link_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist) %></span>
