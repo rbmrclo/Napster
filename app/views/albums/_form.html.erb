@@ -1,6 +1,6 @@
 <div class = "dialog">
  <center> <h2> Add album </h2></center>
-<%= form_for ([@artist, @album]) do |f| %>
+<%= form_for ([@artist,@album]) do |f| %>
   <%= f.label :album_name, "Album Name" %>
   <%= f.text_field :album_name %><br/>
   <%= f.label :date_published, "Date Published" %>
@@ -12,6 +12,7 @@
   <%= f.submit "Submit", :disable_with => 'Submitting...' %>
 
 <% end %>
+
 </div>
 <div class ="dialog-error">
 <% if @album.errors.any? %>
@@ -21,4 +22,4 @@
 <% end %>
 </div>
 
-<%= link_to 'Back', artist_path(@artist) %>
+<%= link_to 'Back', artist_albums_path(@artist) %>

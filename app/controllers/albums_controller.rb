@@ -1,6 +1,21 @@
 class AlbumsController < ApplicationController
+	before_filter :find_artist
+
+	def index
+		@albums = @artist.albums
+	end
+
+	def show
+		#raise params.to_yaml
+		@album = @artist.albums.find params[:id]
+	end
+	
+
+	def new
+		@album = @artist.albums.new
+	end
+
 	def create
-		@artist = Artist.find(params[:artist_id])
 		@album = @artist.albums.new(params[:album])
 		if @album.save
 			redirect_to artist_path(@artist)
@@ -9,15 +24,30 @@ class AlbumsController < ApplicationController
 			render 'new'
 		end
 	end
-
-	def new
-		@artist = Artist.find(params[:artist_id])
-		@album = @artist.albums.new
+	
+	def edit
+		@album = @artist.albums.find(params[:id])
 	end
 
-	def show
-		@artist = Artist.find(params[:artist_id])
-		@album = @artist.albums.find(params[:artist_id])
-	end
+	def update
+		@album = Album.find(params[:id])
+    if @album.update_attributes(params[:album])
+      redirect_to artist_albums_path
+    else
+      render 'edit'
+   	 end
+  	end
 
+  	def destroy
+  		@album = Album.find(params[:id])
+    	@album.destroy
+
+    	redirect_to artist_albums_path
+  	end
+
+
+
+	def find_artist
+		@artist = Artist.find(params[:artist_id])
+	end
 end

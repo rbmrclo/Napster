@@ -6,20 +6,19 @@
    <th>Album/s</th>
    <th></th>
    <th></th>
-   <th></th>
 
 <% @artists.each do |artist| %>
  
   <tr>
-    <td><%= artist.name %></td>
-    <td><%= artist.bio %></td>
-    <td><% artist.albums.each do |album| %>
-    <%= link_to album.album_name, artist_album_path(artist, album) %><br/>
+    <td><%= link_to artist.name, artist %></td>
+    <td class="muted"><%= artist.bio %></td>
+    <td class="muted"><% artist.albums.each do |album| %>
+      <%= album.album_name %>
+    <br/>
     <% end %>
     </td>
-    <td class="btn"><%= link_to 'Show', artist %></td>
-    <td class="btn btn-warning"><%= link_to 'Edit', edit_artist_path(artist) %></td>
-    <td class="btn btn-danger"><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %></td>
+    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+    <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %></td>
   </tr>
 
 <% end %>

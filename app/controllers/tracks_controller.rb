@@ -8,7 +8,7 @@ class TracksController < ApplicationController
   def create
     @track = @album.tracks.new(params[:track])
     if @track.save
-     redirect_to artist_album_track_path(@artist, @album, @track)
+     redirect_to artist_album_tracks_path
     else
       flash[:error] = "track was not saved"
       render 'new'
@@ -19,11 +19,11 @@ class TracksController < ApplicationController
     @track = Track.find(params[:album_id])
     @track.destroy
 
-    redirect_to artist_path
+    redirect_to artist_album_tracks_path
   end
 
   def show
-    @track = Track.find(params[:album_id])
+    @tracks = @album.tracks
   end
 
   def find_artist_and_album

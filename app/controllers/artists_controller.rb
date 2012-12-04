@@ -1,7 +1,6 @@
 class ArtistsController < ApplicationController
 	def index
 	   @artists = Artist.all
-     @albums = Album.all
 	end
 
   def new 
@@ -32,11 +31,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @artist }
-    end
+    @artists
   end
 
   def destroy
@@ -45,4 +40,5 @@ class ArtistsController < ApplicationController
 
     redirect_to artists_path
   end
+
 end
