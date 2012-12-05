@@ -6,7 +6,6 @@ class AlbumsController < ApplicationController
 	end
 
 	def show
-
 		@album = @artist.albums.find params[:id]
 	end
 	
@@ -41,9 +40,9 @@ class AlbumsController < ApplicationController
 
   	def destroy
   		@album = @artist.albums.find(params[:id])
-    	@album.destroy
-
-    	redirect_to artist_albums_path
+  	    @album.destroy
+    	redirect_to artist_albums_path, :notice => "Successfully deleted #{@album.album_name.titlecase}"
+    	
   	end
 
 

@@ -38,7 +38,8 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @artist.destroy
 
-    redirect_to artists_path
+    redirect_to artists_path, :notice => "Successfully Deleted #{@artist.name.titlecase}"
+    
   end
 
 end

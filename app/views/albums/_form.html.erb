@@ -16,14 +16,13 @@
   <%= f.text_field :remarks %><br />
   <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>
-</div>
 <% if @album.errors.any? %>
-  <div class ="dialog-error">
-	<% @album.errors.full_messages.each do |msg| %>
-	<li class="text-error"><%= msg %></li>
-	<% end %>
-  </div>
+  <% @album.errors.full_messages.each do |msg| %>
+  <li class="alert alert-error"><%= msg %></li>
+  <% end %>
 <% end %>
+</div>
+
 
 
 <%= link_to 'Back', artist_albums_path(@artist) %>

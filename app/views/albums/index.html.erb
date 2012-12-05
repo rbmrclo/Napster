@@ -29,6 +29,7 @@
 		<% end %>
 	</td>
 </table>
+<center><span class="text text-success"><%= notice %></span></center>
 <br/>
 <%= button_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist), :class => 'btn btn-info', :method => :get %>
 <hr>

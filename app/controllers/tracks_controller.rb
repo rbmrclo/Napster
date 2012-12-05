@@ -19,7 +19,7 @@ class TracksController < ApplicationController
     @track = @album.tracks.find(params[:id])
     @track.destroy
 
-    redirect_to artist_album_tracks_path
+    redirect_to artist_album_tracks_path, :notice => "Successfully deleted #{@track.track_list.titlecase}"
   end
 
   def show

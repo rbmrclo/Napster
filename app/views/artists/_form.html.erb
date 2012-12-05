@@ -11,14 +11,10 @@
   <%= f.text_area :bio, rows: 3, :placeholder => 'Enter Description of Artist' %><br/>
   <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>
-</div>
 <% if @artist.errors.any? %>
-<div class="dialog-error">
-<span class="text-error">
-	<% @artist.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-	</div></span>
+  <% @artist.errors.full_messages.each do |msg| %>
+  <li class="alert alert-error"><%= msg %></li>
+  <% end %>
 <% end %>
-
+</div>
 <%= link_to "Back", artists_path %>

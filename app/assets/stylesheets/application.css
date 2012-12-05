@@ -22,7 +22,9 @@
       border-bottom-color: #999;
 
     }
-
+    .th_color{
+      background-color: #ccc;
+    }
     .dialog-album {
       width: 30em;
       padding: 2em 5em;

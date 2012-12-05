@@ -1,3 +1,6 @@
+
+
+
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li class = "active"><%= link_to "Artists", artists_path %></li>
@@ -5,16 +8,16 @@
 <h1>Napster's Artists</h1>
 
  <table class="table table-hover">
-   <th>Name</th>
-   <th>Bio</th>
-   <th>Album/s</th>
-   <th></th>
-   <th></th>
+   <th class="th_color">Name</th>
+   <th class="th_color">Bio</th>
+   <th class="th_color">Album/s</th>
+   <th class="th_color"></th>
+   <th class="th_color"></th>
 
 <% @artists.each do |artist| %>
  
   <tr>
-    <td><%= link_to artist.name, artist %></td>
+    <td><%= link_to artist.name.titlecase, artist %></td>
     <td class="muted"><%= artist.bio %></td>
     <td class="muted">
     <% if artist.albums.count > 0 %>
@@ -27,12 +30,14 @@
     </td>
 
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-    <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Please wag mo ko delete :(" } %></td>
-  </tr>
-
+    <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Are you sure?"}%></td>
+  </tr> 
 <% end %>
+    
 </table>
+<center><span class="text text-success"><%= notice %></span></center>
 <br/>
 <%= button_to "Add artist", new_artist_path, :class => 'btn btn-info', :method => :get %>
+
 
 <hr>

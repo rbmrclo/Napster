@@ -10,13 +10,11 @@
 
   <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>
-</div>
 <% if @track.errors.any? %>
-<div class="dialog-error">
 	<% @track.errors.full_messages.each do |msg| %>
-	<li class = "text-error"><%= msg %></li>
+	<li class = "alert alert-error"><%= msg %></li>
 	<% end %>
-	</div>
 <% end %>
+</div>
 
-<%= link_to 'Back', artist_album_path(@artist, @album) %>
+<%= link_to 'Back', artist_album_tracks_path(@artist, @album) %>
