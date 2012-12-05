@@ -4,17 +4,17 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li class = "active"><%= link_to "Artists", artists_path %></li>
-  <li><%= link_to "Album", artist_album_path(1,1) %></li>
+  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
 </ul>
 <h1>Napster's Artists</h1>
 
  <table class="table table-hover">
-   <th class="th_color">Name</th>
-   <th class="th_color">Bio</th>
-   <th class="th_color">Album/s</th>
-   <th class="th_color"></th>
-   <th class="th_color"></th>
-
+   <th>Name</th>
+   <th>Bio</th>
+   <th>Album/s</th>
+   <th></th>
+   <th></th>
+<% if @artists.count > 0 %>
 <% @artists.each do |artist| %>
  
   <tr>
@@ -32,9 +32,11 @@
 
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
     <td><%= link_to 'Destroy', artist, :method => :delete, :data => {:confirm => "Are you sure?"}%></td>
-  </tr> 
-<% end %>
-    
+     <% end %>
+     <% else %>
+  </tr>
+  <p align="right"><span class="text text-warning"><%= "Napster doesn't have an awesome artist yet, Create now!" %></span><p>
+  <% end %>
 </table>
 <center><span class="text text-success"><%= notice %></span></center>
 <br/>

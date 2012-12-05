@@ -1,6 +1,10 @@
 class TracksController < ApplicationController
   before_filter :find_artist_and_album
 
+  def index
+    @tracks = @album.tracks
+  end 
+
 	def new
     @track = @album.tracks.new
   end

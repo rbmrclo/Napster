@@ -25,6 +25,11 @@
     .th_color{
       background-color: #ccc;
     }
+
+    .to_gray{
+      color: #666;
+    }
+
     .dialog-album {
       width: 30em;
       padding: 2em 5em;

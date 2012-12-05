@@ -1,10 +1,29 @@
-<ol type="1" class="dialog">
-<h1> <%= @album.album_name %></h1>
-<% @artist.albums.each do |album| %>
-  <% album.tracks.each do |track| %>
-  <li><%=  track.track_list %></li>
-  <% end %>
-<% end %>
-</ol>
-<br/>
-<%= link_to 'Back', artist_album_path(@artist, @album) %>
+
+  <ul class="nav nav-pills">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Artists", artists_path %></li>
+    <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+  </ul>
+  
+  <div class="dialog">
+  <h1 class="text text-info"> <%= @album.album_name %> </h1>
+  <p align="right"><b>by: </b><span class="text text-info"><%= @artist.name %></span></p>
+  <h5> Tracks: </h5>
+	<ul>
+		<% if @album.tracks.count == 0 %>
+		<p class="muted" align="center"><%= "No Tracks Found for this Album!" %></p>
+		<% else %>
+		<% @album.tracks.each do |track| %>
+		<li class="to_gray"><%= track.track_list.titlecase %></li>
+		<% end %>
+		<% end %>
+	</ul>
+  <br/>
+  <p><strong>Genre: </strong><span class="muted"><%= @album.genre %></span> </p>
+  <p><strong>Date Published: </strong><span class="muted"><%= @album.date_published.strftime("%B %d, %Y") %></span></p>
+  <p><strong>Remarks: </strong><span class="muted"><%= @album.remarks %></span></p>
+  <hr>
+  </div>
+  <br/>
+
+<%= link_to "See more about #{@artist.name}", artist_albums_path(@artist) %>

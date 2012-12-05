@@ -1,6 +1,7 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Artists", artists_path %></li>
+  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
 </ul>
 <div class="dialog">
 <h1><%= @artist.name.titlecase %></h1>
@@ -19,7 +20,11 @@
 <% end %>
 </ol>
 <hr>
-<%= button_to 'View Albums', artist_albums_path(@artist), :class => 'btn btn-info', :method => :get %>
+<% if @artist.albums.count == 0 %>
+<%= button_to 'Create an Album', artist_albums_path(@artist), :class => 'btn btn-info', :method => :get %>
+<% else %>
+<%= button_to 'Show Album Details', artist_albums_path(@artist), :class => 'btn btn-info', :method => :get %>
+<% end %>
 </div>
 <br/>
 <hr>
