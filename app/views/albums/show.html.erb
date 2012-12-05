@@ -1,0 +1,14 @@
+	<ul class="nav nav-pills">
+  	<li><%= link_to "Home", root_path %></li>
+  	<li><%= link_to "Artists", artists_path %></li>
+  	<li class = "active"><%= link_to "Album", artist_album_path(1,1) %></li>
+	</ul>
+	<div class ="dialog-album">
+		<h1>All Albums </h1><br/>
+	<% @album.each do |album| %>
+	 	<h3><%= link_to album.album_name.titlecase , artist_album_tracks_path(album.artist_id, album.id) %>
+	 	</h3>
+	 	Artist:<span class = "muted"><%x = Artist.find(album.artist_id,:select =>"name")%> 
+	 	<%= x.name.titlecase %></span><br/>
+	<% end %>
+	</div>

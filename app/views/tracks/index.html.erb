@@ -1,6 +1,7 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Artists", artists_path %></li>
+  <li><%= link_to "Album", artist_album_path(1,1) %></li>
 </ul>
 <ol type="1" class="dialog">
 <h1> <%= @album.album_name %> </h1>
