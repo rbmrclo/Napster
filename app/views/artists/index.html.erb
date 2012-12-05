@@ -23,7 +23,7 @@
     <td class="muted">
     <% if artist.albums.count > 0 %>
     <% artist.albums.each do |album| %>
-      <%= album.album_name %>
+      <li><%= album.album_name %></li>
       <% end %>
     <% else %>
     <span class="text-error"><%= 'No Existing Album' %></span>

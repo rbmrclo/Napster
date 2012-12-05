@@ -5,8 +5,8 @@
 </ul>
 <div class="dialog">
 <h1><%= @artist.name.titlecase %></h1>
-<li><b><span class="text-info">Bio:</span> </b><%= @artist.bio %> </li>
-<li><b><span class="text-info">Albums</b></li>
+<p><b><span class="text-info">Bio:</span> </b><span class="to_gray"><%= @artist.bio %></span></p>
+<p><b><span class="text-info">Albums</b></p>
 <ol type="1">
 <% if @artist.albums.count > 0 %>
 <% @artist.albums.each do |album| %>
@@ -19,6 +19,10 @@
 </span>
 <% end %>
 </ol>
+	<p>
+	  <b><span class="text-info">Date created: </span></b>
+	  <span class="muted"> <%= @artist.created_at.strftime("%B %d, %Y") %></span>
+	</p>
 <hr>
 <% if @artist.albums.count == 0 %>
 <%= button_to 'Create an Album', artist_albums_path(@artist), :class => 'btn btn-info', :method => :get %>
