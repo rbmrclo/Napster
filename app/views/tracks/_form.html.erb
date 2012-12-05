@@ -1,8 +1,12 @@
+<ul class="nav nav-pills">
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "Artists", artists_path %></li>
+</ul>
 <div class="dialog">
 	<center><h1> <%= @album.album_name %></h1></center>
 <%= form_for ([@artist, @album, @track]) do |f| %>
   <%= f.label :track_list, "Enter Track Name:" %>
-  <%= f.text_field :track_list %><br/>
+  <%= f.text_field :track_list, :placeholder => 'Any song' %><br/>
 
   <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>

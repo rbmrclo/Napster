@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+	.dialog {
+      width: 25em;
+      padding: 2em 5em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right:3px solid #ccc;
+      border-bottom: 3px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+
+    }
+
+    .dialog-album {
+      width: 30em;
+      padding: 2em 5em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right:3px solid #ccc;
+      border-bottom: 3px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+
+    }
+    .dialog-error {
+      width: 25em;
+      padding: 0 5em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right:3px solid #ccc;
+      border-bottom: 3px solid #ccc;
+      border-color: maroon;
+    }
+    .container {
+      margin-top: 20px;
+      position: relative;
+    }

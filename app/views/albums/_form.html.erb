@@ -1,18 +1,21 @@
-<div class = "dialog">
+<ul class="nav nav-pills">
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "Artists", artists_path %></li>
+</ul>
+
+<div class = "dialog-album">
  <center> <h2> Add album </h2></center>
 <%= form_for ([@artist,@album]) do |f| %>
   <%= f.label :album_name, "Album Name" %>
   <%= f.text_field :album_name %><br/>
   <%= f.label :date_published, "Date Published" %>
-  <%= f.text_field :date_published %><br/>
+  <%= f.date_select :date_published, { :end_year => DateTime.now.year - 50,:start_year => DateTime.now.year + 10, :order => [:month, :day, :year] }, :style => "width: 121px;" %><br/>
   <%= f.label :genre, "Genre" %>
   <%= f.text_field :genre %><br/>
   <%= f.label :remarks, "Remarks" %>
   <%= f.text_field :remarks %><br />
   <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
-
 <% end %>
-
 </div>
 <% if @album.errors.any? %>
   <div class ="dialog-error">
