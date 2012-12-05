@@ -4,14 +4,15 @@
   <%= f.label :track_list, "Enter Track Name:" %>
   <%= f.text_field :track_list %><br/>
 
-  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+  <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>
 </div>
-<div class="dialog-error">
 <% if @track.errors.any? %>
+<div class="dialog-error">
 	<% @track.errors.full_messages.each do |msg| %>
 	<li class = "text-error"><%= msg %></li>
 	<% end %>
+	</div>
 <% end %>
-</div>
+
 <%= link_to 'Back', artist_album_path(@artist, @album) %>

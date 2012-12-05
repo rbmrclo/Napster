@@ -1,5 +1,5 @@
 <h1><%= "Albums of #{@artist.name.titlecase}" %></h1>
-<table class="table table-striped">
+<table class="table table-hover">
 	<tr>
 		<th> Album Name </th>
 		<th> Genre </th>
@@ -26,6 +26,6 @@
 	</td>
 </table>
 <br/>
-<span class="btn btn-muted"><%= link_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist) %></span>
+<%= button_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist), :class => 'btn btn-info', :method => :get %>
 <hr>
 <%= link_to "Back to #{@artist.name.titlecase}", artist_path(@artist)%>

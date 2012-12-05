@@ -9,17 +9,18 @@
   <%= f.text_field :genre %><br/>
   <%= f.label :remarks, "Remarks" %>
   <%= f.text_field :remarks %><br />
-  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+  <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 
 <% end %>
 
 </div>
-<div class ="dialog-error">
 <% if @album.errors.any? %>
+  <div class ="dialog-error">
 	<% @album.errors.full_messages.each do |msg| %>
 	<li class="text-error"><%= msg %></li>
 	<% end %>
+  </div>
 <% end %>
-</div>
+
 
 <%= link_to 'Back', artist_albums_path(@artist) %>

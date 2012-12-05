@@ -5,14 +5,16 @@
   <%= f.text_field :name %><br/>
   <%= f.label :bio, "Bio" %><br />
   <%= f.text_area :bio, rows: 3 %><br/>
-  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+  <%= f.submit "Submit", :disable_with => 'Submitting...', :class => 'btn btn-inverse' %>
 <% end %>
 </div>
+<% if @artist.errors.any? %>
 <div class="dialog-error">
-<span class="text-error"><% if @artist.errors.any? %>
+<span class="text-error">
 	<% @artist.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
-<% end %></span>
-</div>
+	</div></span>
+<% end %>
+
 <%= link_to "Back", artists_path %>

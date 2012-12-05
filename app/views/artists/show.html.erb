@@ -15,7 +15,7 @@
 <% end %>
 </ol>
 <hr>
-<span class="btn btn-muted"><%= link_to 'View Albums', artist_albums_path(@artist) %> </span>
+<%= button_to 'View Albums', artist_albums_path(@artist), :class => 'btn btn-info', :method => :get %>
 </div>
 <br/>
 <hr>
