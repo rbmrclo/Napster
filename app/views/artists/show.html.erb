@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Artists", artists_path %></li>
-  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+  <li><%= link_to "Albums", show_album_index_path %></li>
 </ul>
 <div class="dialog">
 <h1><%= @artist.name.titlecase %></h1>
@@ -13,7 +13,7 @@
 <li class="muted"><%= album.album_name %></li>
 <% end %>
 <% else %>
-<span class="muted"><%= 'You don\'t have existing Albums.' %>
+<span class="muted"><%= "#{@artist.name.titlecase} doesn\'t have an album yet." %>
 	<br/>
 	<%= 'Create an Album first!' %>
 </span>
@@ -33,3 +33,7 @@
 <br/>
 <hr>
 <%= link_to 'Back to Artists', artists_path %>
+<hr>
+<center>
+<footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+</center>

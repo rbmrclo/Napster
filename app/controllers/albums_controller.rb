@@ -40,13 +40,12 @@ class AlbumsController < ApplicationController
     	
   	end
 
+  	
+
 	def find_artist
 		@artist = Artist.find(params[:artist_id])
 	end
 
-	def show
-		@album = Album.find(:all, :select => "album_name, artist_id, id")
-		
-	end
+
 
 end

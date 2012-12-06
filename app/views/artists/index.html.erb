@@ -1,13 +1,18 @@
-
-
-
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li class = "active"><%= link_to "Artists", artists_path %></li>
-  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+  <li><%= link_to "Albums", show_album_index_path %></li>
 </ul>
-<h1>Napster's Artists</h1>
+<br/>
+<% if @artists.count  > 0 %>
+<div class ="hero-unit">
+    <h3>Featured Artist: <span class ="text-info">
+      <%= link_to @featured_artist.name.titlecase, artist_path(@featured_artist.id) %></span></h3>
+</div>
+<% else %>
 
+<% end %> 
+<h1>Napster's Artists</h1>
  <table class="table table-hover">
    <th>Name</th>
    <th>Bio</th>
@@ -40,7 +45,15 @@
 </table>
 <center><span class="text text-success"><%= notice %></span></center>
 <br/>
+<% if %>
+<% @artists.count == 0 %>
+<%= button_to "Create an artist", new_artist_path, :class => 'btn btn-info', :method => :get %>
+<% else %>
 <%= button_to "Add artist", new_artist_path, :class => 'btn btn-info', :method => :get %>
-
+<% end %>
 
 <hr>
+<center>
+<footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+</center>
+

@@ -2,7 +2,7 @@
   <ul class="nav nav-pills">
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Artists", artists_path %></li>
-    <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+    <li><%= link_to "Albums", show_album_index_path %></li>
   </ul>
   
   <div class="dialog">
@@ -26,3 +26,7 @@
   <br/>
 
 <%= link_to "See more about #{@artist.name}", artist_albums_path(@artist) %>
+<hr>
+<center>
+<footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+</center>

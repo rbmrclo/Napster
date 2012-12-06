@@ -5864,6 +5864,15 @@ a.badge:hover {
   color: inherit;
 }
 
+.hero-unit h3 {
+  margin-bottom: 0;
+  font-size: 30px;
+  text-align: center; 
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+
 .hero-unit li {
   line-height: 30px;
 }

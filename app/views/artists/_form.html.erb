@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Artists", artists_path %></li>
-  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+  <li><%= link_to "Albums", show_album_index_path %></li>
 </ul>
 <div class="dialog">
 <center><h2> Create Artist </h2></center>
@@ -19,3 +19,7 @@
 <% end %>
 </div>
 <%= link_to "Back", artists_path %>
+<hr>
+<center>
+<footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+</center>

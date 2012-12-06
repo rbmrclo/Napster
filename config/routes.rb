@@ -1,5 +1,7 @@
 Napster::Application.routes.draw do
   
+  get "show_album/index"
+
   get "home/index"
   resources :artists do
     resources :albums do

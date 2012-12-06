@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
 	def index
 	   @artists = Artist.all
+     @featured_artist = Artist.order("RANDOM()").first
 	end
 
   def new 
@@ -41,5 +42,4 @@ class ArtistsController < ApplicationController
     redirect_to artists_path, :notice => "Successfully Deleted #{@artist.name.titlecase}"
     
   end
-
 end

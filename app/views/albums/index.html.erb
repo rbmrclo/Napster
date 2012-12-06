@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Artists", artists_path %></li>
-  <li><%= link_to "Albums", artist_album_path(1,1) %></li>
+  <li><%= link_to "Albums", show_album_index_path %></li>
 </ul>
 <h1><%= "Albums of #{@artist.name.titlecase}" %></h1>
 <table class="table table-hover">
@@ -40,6 +40,14 @@
 </table>
 <center><span class="text text-success"><%= notice %></span></center>
 <br/>
+<% if @albums.count == 0 %>
+<%= button_to "Create an Album for #{@artist.name.titlecase}", new_artist_album_path(@artist), :class => 'btn btn-info', :method => :get %>
+<% else %>
 <%= button_to "Add album for #{@artist.name.titlecase}", new_artist_album_path(@artist), :class => 'btn btn-info', :method => :get %>
+<% end %>
 <hr>
 <%= link_to "Back to #{@artist.name.titlecase}", artist_path(@artist)%>
+<hr>
+<center>
+<footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+</center>

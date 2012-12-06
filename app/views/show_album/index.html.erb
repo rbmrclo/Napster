@@ -1,0 +1,26 @@
+
+	<ul class="nav nav-pills">
+  	<li><%= link_to "Home", root_path %></li>
+  	<li><%= link_to "Artists", artists_path %></li>
+  	<li class ="active"><%= link_to "Albums", show_album_index_path %></li>
+	</ul>
+	<div class ="dialog-album">
+		<h1>All Albums </h1><br/>
+		<% if @albums.count == 0 %>
+		<p align="center"><span class="muted"><%= "No Albums Found!" %></span></p>
+		<% else %>
+	<% @albums.each do |album| %>
+	 	<h3><%= link_to album.album_name.titlecase, artist_album_track_path(album.artist_id,album.id,album.id) %>
+	 	</h3>
+	 	Artist: <span class = "muted"><% x = Artist.find(album.artist_id,:select =>"name")%> 
+	 	<%= x.name.titlecase %></span> | 
+
+	 	Tracks: <span class="muted"><%= album.tracks.count.to_s() %></span>
+	<% end %>
+	</div>
+	<% end %>
+	
+  <hr>
+  <center>
+  <footer class="muted"> © Copyright 2012 | Proudcloud </footer>
+  </center>
