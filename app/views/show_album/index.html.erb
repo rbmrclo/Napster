@@ -1,4 +1,4 @@
-<% provide(:title, ' | Albums') %>
+<% provide(:title, ' | Albums | via VIM') %>
 	<ul class="nav nav-pills">
   	<li><%= link_to "Home", root_path %></li>
   	<li><%= link_to "Artists", artists_path %></li>
@@ -17,8 +17,9 @@
 
 	 	Tracks: <span class="muted"><%= album.tracks.count.to_s() %></span>
 	<% end %>
-	</div>
 	<% end %>
+	</div>
+
 	
   <hr>
   <center>

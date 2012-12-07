@@ -19,7 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  encoding: utf8
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: db_production
   timeout: 5000
